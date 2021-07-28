@@ -47,14 +47,28 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UI
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         
+        
+        
         return cell
     }
  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
+        
         return CGSize(width: collectionView.frame.size.width / 4 - 10, height: collectionView.frame.size.width / 4 - 10)
 
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectCell = collectionView.cellForItem(at: indexPath)!
+        
+            selectCell.backgroundColor = UIColor.systemTeal
+            
+       
+        }
+        
+    }
     
-}
+  
+
