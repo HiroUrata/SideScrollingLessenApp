@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
     }
     
@@ -23,6 +25,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        collectionViewFlowLayout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = collectionViewFlowLayout
         
     }
